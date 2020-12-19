@@ -5,7 +5,7 @@ function Twitter (){
 
     useEffect(() => {
         const fetchTweets =  async() => {
-            const res = await axios.get('http://localhost:3001/')
+            const res = await axios.get('http://localhost:3001/status/active')
             const tweets = res.data;
             setTweets(tweets);
             console.log(res);
