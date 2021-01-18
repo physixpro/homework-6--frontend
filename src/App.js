@@ -1,11 +1,16 @@
-import Twitter from './components/Twitter'
+
 import './App.css';
-import RegisterForm from './components/RegisterForm'
+import UserBase from './components/UserBase';
+import FetchUsers from './components/FetchUsers';
+import DeleteUsers from './components/DeleteUsers';
+
 
 function App() {
   return (
     <div className="App">
-      <RegisterForm />
+     <UserBase />
+     <FetchUsers />
+     <DeleteUsers />
     </div>
   );
 }
