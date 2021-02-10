@@ -1,38 +1,50 @@
-import React from 'react'
+import React, {useState,useEffect} from 'react'
+import axios from 'axios'
 
 const ObjectsHomework = () => {
 
+const[dogs,setDogs]=useState([])
 
-    var person = {
-        country: 'Trinidad',
-        ethnicity: 'west-Indian',
-        pet: 'dog',
-        music: 'rock',
-        sex: "male"
-    }
+    useEffect( () => {
+        const fetchApi = async () => {
+            const res = await axios.get('https://api.thedogapi.com/breeds')
+            const dogs = res.data;
+            setDogs(dogs)
+            console.log(dogs)
+        }
+        fetchApi();
+    },[])
 
-    const entries = Object.entries(person)
-    console.log(entries)
+    // var person = {
+    //     country: 'Trinidad',
+    //     ethnicity: 'west-Indian',
+    //     pet: 'dog',
+    //     music: 'rock',
+    //     sex: "male"
+    // }
+
+    // const entries = Object.entries(person)
+    // console.log(entries)
    
-    for (const entry of entries) {
-        console.log(entry)
-    }
+    // for (const entry of entries) {
+    //     console.log(entry)
+    // }
 
-    var car = {
-        brand: "tesla",
-        year: "2019",
-        color: "black",
-        milleage: "142355 miles",
-        insurance: "yes"
-    }
+    // var car = {
+    //     brand: "tesla",
+    //     year: "2019",
+    //     color: "black",
+    //     milleage: "142355 miles",
+    //     insurance: "yes"
+    // }
 
-    var animal = {
-        kind: "dog",
-        breed: "husky",
-        sex: "female",
-        color: "white and black", 
-        size: "medium"
-    }
+    // var animal = {
+    //     kind: "dog",
+    //     breed: "husky",
+    //     sex: "female",
+    //     color: "white and black", 
+    //     size: "medium"
+    // }
 
     
 
@@ -50,7 +62,12 @@ const ObjectsHomework = () => {
 
     return(
         <div>
-          Hello World
+          Hello dogs
+          {
+              dogs.map( dog => (
+                 <p> {dog.breed}</p>
+              ))
+          }
           
         </div>
     )
