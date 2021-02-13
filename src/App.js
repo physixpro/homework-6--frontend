@@ -1,18 +1,18 @@
-// import './App.css';
-// import { GoogleMap, withScriptjs,withGoogleMap } from "react-google-maps";
-// import UserBase from './components/UserBase';
+import './App.css';
+
 // import FetchUsers from './components/FetchUsers';
 // import DeleteUsers from './components/DeleteUsers';
 // import ObjectsHomework from './components/ObjectsHomework';
-import React, {useState} from 'react'
-import Login from './components/Login';
+import Test2 from "./components/Test2"
+
+// import Login from './components/Login';
 
 
 function App() {
 
   return (
     <div>
-<Login />
+<Test2 />
     </div>
   )
 }
